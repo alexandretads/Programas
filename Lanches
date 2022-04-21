@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class Lanches {
+	static double cachorroQuente = 0;
+	static double xSalada = 0;
+	static double xBacon= 0;
+	static double torrada = 0;
+	static double refrigerante= 0;
+	static double total= 0;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+	
+		
+		System.out.println("Deseja fazer um pedido?");
+		System.out.println("0 - NAO");
+		System.out.println("1 - SIM");
+		int codigo = sc.nextInt();
+		while(codigo!=0) {
+			System.out.println("1 - Cachorro Quente R$ 4.00");
+			System.out.println("2 - X-Salada R$ 4.50");
+			System.out.println("3 - X-Bacon R$ 5.00");
+			System.out.println("4 - Torrada Simples R$ 2.00");
+			System.out.println("5 - Refrigerante R$ 1.50");
+			System.out.println("Insira  o codigo do produto: ");
+			System.out.println("Digite 0 para sair");
+			codigo = sc.nextInt();
+			if(codigo==1) {
+				System.out.println("Insira a Quantidade: ");
+				int quant = sc.nextInt();
+				cachorroQuente = cachorroQuente + quant;
+			}
+			else if(codigo==2) {
+				System.out.println("Insira a Quantidade: ");
+				int quant = sc.nextInt();
+				xSalada = xSalada + quant;
+			}
+			else if(codigo==3) {
+				System.out.println("Insira a Quantidade: ");
+				int quant = sc.nextInt();
+				xBacon = xBacon + quant;
+			}
+			else if(codigo==4) {
+				System.out.println("Insira a Quantidade: ");
+				int quant = sc.nextInt();
+				torrada = torrada + quant;
+			}
+			else if(codigo==5) {
+				System.out.println("Insira a Quantidade: ");
+				int quant = sc.nextInt();
+				refrigerante = refrigerante + quant;
+			}
+			else {
+				System.out.println("Deseja Sair?");
+				System.out.println("0 - SIM");
+				System.out.println("1 - NAO");
+				codigo = sc.nextInt();
+			}
+		}
+		System.out.println("Pedido");
+		System.out.println(cachorroQuente+"- Cachorro Quente");
+		System.out.println(xSalada+"- X-Salada");
+		System.out.println(xBacon+"- X-Bacon");
+		System.out.println(torrada+"- Torrada Simples");
+		System.out.println(refrigerante+"- Refrigerante");
+		
+		cachorroQuente = cachorroQuente * 4;
+		xSalada = xSalada * 4.5;
+		xBacon = xBacon * 5;
+		torrada = torrada * 2;
+		refrigerante = refrigerante * 1.5;
+		total=cachorroQuente+xSalada+xBacon+torrada+refrigerante;
+		
+		System.out.println("Valor Total = "+total+"0 R$");
+		
+		System.out.println("Pedido Concluido");
+		sc.close();
+	}
+
+}
